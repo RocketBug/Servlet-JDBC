@@ -1,2 +1,2 @@
 # Servlet-JDBC
-Code for connecting, displaying and inserting information into a MySQL database.
+Code for connecting, displaying and inserting information into/from a MySQL database.
