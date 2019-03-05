@@ -59,8 +59,6 @@ public class SqServlet extends HttpServlet
 	          Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
 
 	          // Execute SQL query
-	          Statement stmt = conn.createStatement();
-	          
 	          String insertDB = "insert into Employees"+"(id, age, first, last) values"+"(?, ?, ?, ?)";
 	          PreparedStatement preparedstmt = conn.prepareStatement(insertDB);
 	          preparedstmt.setInt(1, idVal);
@@ -69,6 +67,7 @@ public class SqServlet extends HttpServlet
 	          preparedstmt.setString(4, lastName);
 	          preparedstmt.executeUpdate();
 	          
+		  Statement stmt = conn.createStatement();
 	          String sql;
 	          sql = "SELECT id, first, last, age FROM Employees";
 	          ResultSet rs = stmt.executeQuery(sql);
@@ -82,7 +81,6 @@ public class SqServlet extends HttpServlet
 	             String last = rs.getString("last");
 
 	             //Display values
-	             
 	             out.println("ID: " + id +", Age: " + age + ", First: " + first + ", Last: " + last + "<br>");
 	             
 	          }
