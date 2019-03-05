@@ -30,6 +30,5 @@ public class AddServlet extends HttpServlet
 		session.setAttribute("firstName", firstName);
 		session.setAttribute("lastName", lastName);
 		res.sendRedirect("sq");
-		//
 	}
 }
